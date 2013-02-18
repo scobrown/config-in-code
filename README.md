@@ -42,6 +42,8 @@ public interface IRespond
 
 Now add a Ruby implimentation in your output folder with the same filename as the interface (by convention bin\IRespond.rb)
 Make sure this file is encoded in Codepage 1252 - Western European(Windows)
+Ruby
+====
 ````
 class Respond
     include IRespond
@@ -49,6 +51,15 @@ class Respond
         "Hello World"
     end    
 end
+````
+Python
+======
+````
+import IRespond
+
+class TestPython(IRespond):
+    def Request(self):
+		return "Hello World"
 ````
 
 Convention
