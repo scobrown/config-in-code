@@ -24,6 +24,12 @@ var c = config.GetConfiguration("RubyClassName");
 
 Yep, that is it.  You now have an instance of IMyInterface that is actually a Ruby class.  Seriously.
 
+If you use a container like StructureMap you can simply
+````
+ObjectFactory.Initialize(x => x.WithDefaultConfiguration<IMyInterface>());
+var instance = ObjectFactory.GetInstance<IMyInterface>();
+````
+
 Creating the interface
 ======================
 Any old interface will do.  What are you trying to accomplish?
