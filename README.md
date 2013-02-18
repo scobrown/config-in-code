@@ -29,6 +29,7 @@ public interface IRespond
 ````
 
 Now add a Ruby implimentation in your output folder with the same filename as the interface (by convention bin\IRespond.rb)
+Make sure this file is encoded in Codepage 1252 - Western European(Windows)
 ````
 class RubyResponder
     include IRespond
@@ -52,3 +53,5 @@ Tips
 * Put your ruby files in your project under a folder /Configuration.  Set the .rb files to "Copy if newer".  This will place the file in bin/Configuration/ during build.
 * You can include ruby gems!!  To install gems you need to use 'igem install gemname' at the command line.  For this to work you will have to install IronRuby (recommend 1.0)
     * Put "require 'rubygems'" before any custom gem requires
+* The dynamic runtime wants files to be encoded in Codepage 1252.
+    * In VS you can set this under File -> Advanced Save Options when you have the file open
