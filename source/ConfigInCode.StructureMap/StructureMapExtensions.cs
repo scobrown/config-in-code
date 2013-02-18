@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using StructureMap;
+﻿using StructureMap;
 
-namespace ConfigInCode.StructureMapPlugin
+namespace ConfigInCode.StructureMap
 {
     public static class StructureMapExtensions
     {

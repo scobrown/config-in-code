@@ -1,5 +1,5 @@
 ﻿using ConfigInCode;
-using ConfigInCode.StructureMapPlugin;
+using ConfigInCode.StructureMap;
 using NUnit.Framework;
 using StructureMap;
 
