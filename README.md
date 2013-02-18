@@ -1,3 +1,7 @@
+NuGet Me
+========
+Install-Package ConfigInCode
+
 Config In Code
 ==============
 
