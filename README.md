@@ -38,9 +38,17 @@ class RubyResponder
 end
 ````
 
+Convention
+==========
 Much of this magic is based on convention, so here are the default conventions:
 * The Ruby class name is the first parameter passed to GetConfiguration
 * The Ruby class must "inherit" from the .NET interface.  Do this with "include Full::Namespace::And:Interface"
 * The Ruby file that gets loaded will be InterfaceName.rb
 * The Ruby file should be located in the same directory as the executable or in \Configuration
 * For Web apps the Ruby file may be in \bin\Configuration
+
+Tips
+====
+* Put your ruby files in your project under a folder /Configuration.  Set the .rb files to "Copy if newer".  This will place the file in bin/Configuration/ during build.
+* You can include ruby gems!!  To install gems you need to use 'igem install gemname' at the command line.  For this to work you will have to install IronRuby (recommend 1.0)
+    * Put "require 'rubygems'" before any custom gem requires
