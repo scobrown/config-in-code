@@ -17,3 +17,23 @@ var c = config.GetConfiguration("RubyClassName");
 ````
 
 Yep, that is it.  You now have an instance of IMyInterface that is actually a Ruby class.  Seriously.
+
+Creating the interface
+======================
+Any old interface will do.  What are you trying to accomplish?
+````
+public interface IRespond
+{
+    string Request();
+}
+````
+
+Now add a Ruby implimentation in your output folder with the same filename as the interface (by convention bin\IRespond.rb)
+````
+class RubyResponder
+    include IRespond
+    def Request
+        "Hello World"
+    end    
+end
+````
