@@ -11,17 +11,31 @@ namespace Test.ConfigInCode
     class Configuration_Load
     {
         [Test]
-        public void can_load_config_file()
+        public void can_load_ruby_config_file()
         {
             var config = new Configuration<ITestConfiguration>();
             var c = config.GetConfiguration("Configuration", "UnusedParam");
             Assert.NotNull(c);
         }
         [Test]
-        public void can_pass_in_constructor_value()
+        public void can_pass_in_constructor_ruby()
         {
             var config = new Configuration<ITestConfiguration>();
             var c = config.GetConfiguration("Configuration", "HelloWorld");
+            Assert.AreEqual("HelloWorld", c.ConstructorValue);
+        }
+        [Test]
+        public void can_load_python_config_file()
+        {
+            var config = new Configuration<ITestPython>();
+            var c = config.GetDefaultConfiguration();
+            Assert.NotNull(c);
+        }
+        [Test]
+        public void can_pass_in_constructor_python()
+        {
+            var config = new Configuration<ITestPython>();
+            var c = config.GetConfiguration("TestPythonWithConst", "HelloWorld");
             Assert.AreEqual("HelloWorld", c.ConstructorValue);
         }
         [Test]
@@ -34,7 +48,7 @@ namespace Test.ConfigInCode
             Assert.NotNull(c);
         }
         [Test]
-        public void can_respond_to_method_call()
+        public void can_respond_to_method_call_ruby()
         {
             var config = new Configuration<IRespond>();
             var c = config.GetConfiguration("RubyResponder");

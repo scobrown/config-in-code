@@ -6,10 +6,10 @@ using Microsoft.Scripting.Hosting;
 
 namespace ConfigInCode
 {
-    public class RubyScript
+    public class ScriptLoader
     {
         private static readonly bool Loaded;
-        static RubyScript()
+        static ScriptLoader()
         {
             AppDomain.CurrentDomain.AssemblyResolve += (sender, args) =>
             {
@@ -39,14 +39,14 @@ namespace ConfigInCode
 
         private readonly ScriptEngine _engine;
 
-        internal RubyScript()
+        internal ScriptLoader(ScriptRuntime runtime, string languageName)
         {
             if (!Loaded) ;
-
-            RunTime = IronRuby.Ruby.CreateRuntime();
+ 
+            RunTime = runtime;
             RunTime.LoadAssembly(typeof(System.Environment).Assembly);
             RunTime.LoadAssembly(typeof(System.Dynamic.ExpandoObject).Assembly);
-            _engine = IronRuby.Ruby.GetEngine(RunTime);
+            _engine = RunTime.GetEngine(languageName);
             var paths = new List<string>(_engine.GetSearchPaths())
                             {
                                 AppDomain.CurrentDomain.BaseDirectory,

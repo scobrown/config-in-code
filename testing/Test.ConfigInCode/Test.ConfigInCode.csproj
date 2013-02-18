@@ -60,11 +60,15 @@
     <Compile Include="Configuration_Load.cs" />
     <EmbeddedResource Include="Embedded.rb" />
     <Compile Include="Configuration_StructureMap.cs" />
+    <Compile Include="ITestPython.cs" />
     <Compile Include="IRespond.cs" />
     <Compile Include="ITestConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Configuration\ITestPython.py">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Configuration\IRespond.rb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

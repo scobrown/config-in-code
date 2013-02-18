@@ -8,7 +8,7 @@
     <owners>Scott Brown</owners>
     <projectUrl>https://github.com/scobrown/config-in-code</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Use ruby scripts for configuration</description>
+    <description>Use ruby and python scripts for configuration</description>
     <copyright>Copyright 2013</copyright>
     <dependencies>
     </dependencies>
