@@ -1,6 +1,5 @@
 require 'albacore'
 require 'yaml'
-require './tools/ilmerge'
 
 outdir = File.expand_path("./output/")
 

@@ -6,7 +6,7 @@
     <version>1.0</version>
     <authors>Scott Brown</authors>
     <owners>Scott Brown</owners>
-    <projectUrl></projectUrl>
+    <projectUrl>https://github.com/scobrown/config-in-code</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Use ruby scripts for configuration</description>
     <copyright>Copyright 2013</copyright>
