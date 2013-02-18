@@ -65,5 +65,10 @@ namespace ConfigInCode
             RubyScript.RunScriptFromText(textStream.ReadToEnd());
             return RubyScript.CreateInstance<T>(implimentation, constructionParameters);
         }
+
+        public T GetDefaultConfiguration(params object[] constructorParams)
+        {
+            return GetConfiguration(typeof (T).Name.Trim('I'), constructorParams);
+        }
     }
 }

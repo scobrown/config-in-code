@@ -8,7 +8,7 @@ namespace Test.ConfigInCode
     /// Some of these tests are testing serverconfig which is not kosher
     /// </summary>
     [TestFixture]
-    class ConfigurationTests_Load
+    class Configuration_Load
     {
         [Test]
         public void can_load_config_file()

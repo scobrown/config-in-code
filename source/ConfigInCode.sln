@@ -16,6 +16,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{E775592F
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unit", "Unit", "{00685A7C-07E2-4DD1-A01A-6AF3A784E50D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Containers", "Containers", "{CF68ABFA-7EAE-4FBF-85DB-C2BCB30110CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigInCode.StructureMap", "ConfigInCode.StructureMap\ConfigInCode.StructureMap.csproj", "{84AE6DC0-22BA-4424-82CE-DC66892FDDA2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,6 +34,10 @@ Global
 		{F3EA0A10-0C2C-40B5-BA53-779623ADE77C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3EA0A10-0C2C-40B5-BA53-779623ADE77C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3EA0A10-0C2C-40B5-BA53-779623ADE77C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84AE6DC0-22BA-4424-82CE-DC66892FDDA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84AE6DC0-22BA-4424-82CE-DC66892FDDA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84AE6DC0-22BA-4424-82CE-DC66892FDDA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84AE6DC0-22BA-4424-82CE-DC66892FDDA2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -37,5 +45,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{00685A7C-07E2-4DD1-A01A-6AF3A784E50D} = {E775592F-F4CF-4034-A526-54314832FEF8}
 		{F3EA0A10-0C2C-40B5-BA53-779623ADE77C} = {00685A7C-07E2-4DD1-A01A-6AF3A784E50D}
+		{84AE6DC0-22BA-4424-82CE-DC66892FDDA2} = {CF68ABFA-7EAE-4FBF-85DB-C2BCB30110CC}
 	EndGlobalSection
 EndGlobal

@@ -43,6 +43,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\source\packages\NUnit.2.6.0.12054\lib\nunit.framework.dll</HintPath>
     </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\..\source\packages\structuremap.2.6.4.1\lib\net40\StructureMap.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -54,8 +57,9 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConfigurationTests_Load.cs" />
+    <Compile Include="Configuration_Load.cs" />
     <EmbeddedResource Include="Embedded.rb" />
+    <Compile Include="Configuration_StructureMap.cs" />
     <Compile Include="IRespond.cs" />
     <Compile Include="ITestConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -70,6 +74,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\source\ConfigInCode.StructureMap\ConfigInCode.StructureMap.csproj">
+      <Project>{84ae6dc0-22ba-4424-82ce-dc66892fdda2}</Project>
+      <Name>ConfigInCode.StructureMap</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\source\ConfigInCode\ConfigInCode.csproj">
       <Project>{8C2F0A45-7B9F-406B-93BC-F3660F8FCFF2}</Project>
       <Name>ConfigInCode</Name>

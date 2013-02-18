@@ -10,3 +10,10 @@ class Configuration
         @constructorValue = constructorValue             
     end
 end
+
+class TestConfiguration
+    include Test::ConfigInCode::ITestConfiguration
+	def ConstructorValue
+        "TestConfiguration"
+    end
+end
