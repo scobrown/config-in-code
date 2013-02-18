@@ -83,3 +83,11 @@ Tips
     * Put "require 'rubygems'" before any custom gem requires
 * The dynamic runtime wants files to be encoded in Codepage 1252.
     * In VS you can set this under File -> Advanced Save Options when you have the file open
+* The script gets loaded every call to GetConfiguration, so this can be used to allow runtime changes (but see the caveat below)
+
+Caveats
+=======
+* ~5MB dll!!  Both python and ruby are included by default and get embedded
+* The script gets loaded and executed every time GetConfiguration is called.  This is intended to be "bootstrapp-ish" code and not something for a tight loop
+* May not hold up well under high load
+* Subject to all the limitations of the DLR implementations
