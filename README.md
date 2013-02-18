@@ -19,7 +19,7 @@ What does it look like
 ======================
 ````
 var config = new Configuration<IMyInterface>();
-var c = config.GetConfiguration("RubyClassName");
+var c = config.GetConfiguration();
 ````
 
 Yep, that is it.  You now have an instance of IMyInterface that is actually a Ruby class.  Seriously.
@@ -43,7 +43,7 @@ public interface IRespond
 Now add a Ruby implimentation in your output folder with the same filename as the interface (by convention bin\IRespond.rb)
 Make sure this file is encoded in Codepage 1252 - Western European(Windows)
 ````
-class RubyResponder
+class Respond
     include IRespond
     def Request
         "Hello World"
@@ -56,6 +56,7 @@ Convention
 Much of this magic is based on convention, so here are the default conventions:
 * The Ruby class name is the first parameter passed to GetConfiguration
 * The Ruby class must "inherit" from the .NET interface.  Do this with "include Full::Namespace::And:Interface"
+* The Ruby class name must match the interface name without the prefix I
 * The Ruby file that gets loaded will be InterfaceName.rb
 * The Ruby file should be located in the same directory as the executable or in \Configuration
 * For Web apps the Ruby file may be in \bin\Configuration
