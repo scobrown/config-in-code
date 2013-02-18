@@ -13,7 +13,7 @@ have already solved this, everything is a config file!  Let's steal some great i
 
 Enter Config In Code.
 
-Config In Code provides a convention based loading of IronRuby implimentations of .NET interfaces.  So...
+Config In Code provides a convention based loading of IronRuby and/or IronPython implimentations of .NET interfaces.  So...
 
 What does it look like
 ======================
@@ -54,17 +54,21 @@ end
 Convention
 ==========
 Much of this magic is based on convention, so here are the default conventions:
-* The Ruby class name is the first parameter passed to GetConfiguration
-* The Ruby class must "inherit" from the .NET interface.  Do this with "include Full::Namespace::And:Interface"
-* The Ruby class name must match the interface name without the prefix I
+* The DLR class name is the first parameter passed to GetConfiguration
+* The DLR class must "inherit" from the .NET interface.  
+    * For Ruby "include Full::Namespace::And:Interface"
+    * For Python "PythonClass(NETClass)" and add an import for the namespace
+* The DLR class name must match the interface name without the prefix I
 * The Ruby file that gets loaded will be InterfaceName.rb
-* The Ruby file should be located in the same directory as the executable or in \Configuration
-* For Web apps the Ruby file may be in \bin\Configuration
+* The Python file that gets loaded will be InterfaceName.py
+* The DLR file should be located in the same directory as the executable or in \Configuration
+* For Web apps the DLR file may be in \bin\Configuration
 
 Tips
 ====
-* Put your ruby files in your project under a folder /Configuration.  Set the .rb files to "Copy if newer".  This will place the file in bin/Configuration/ during build.
-* You can include ruby gems!!  To install gems you need to use 'igem install gemname' at the command line.  For this to work you will have to install IronRuby (recommend 1.0)
+* Put your dlr files in your project under a folder /Configuration.  Set the .rb and .py files to "Copy if newer".  This will place the file in bin/Configuration/ during build.
+* You can include ruby gems!!  To install gems you need to use 'igem install gemname' at the command line.  
+    * For this to work you will have to install IronRuby (recommend 1.0)
     * Put "require 'rubygems'" before any custom gem requires
 * The dynamic runtime wants files to be encoded in Codepage 1252.
     * In VS you can set this under File -> Advanced Save Options when you have the file open
