@@ -37,3 +37,10 @@ class RubyResponder
     end    
 end
 ````
+
+Much of this magic is based on convention, so here are the default conventions:
+*The Ruby class name is the first parameter passed to GetConfiguration
+*The Ruby class must "inherit" from the .NET interface.  Do this with "include Full::Namespace::And:Interface"
+*The Ruby file that gets loaded will be InterfaceName.rb
+*The Ruby file should be located in the same directory as the executable or in \Configuration
+*For Web apps the Ruby file may be in \bin\Configuration
