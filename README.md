@@ -11,3 +11,9 @@ Config In Code provides a convention based loading of IronRuby implimentations o
 
 What does it look like
 ======================
+````
+var config = new Configuration<IMyInterface>();
+var c = config.GetConfiguration("RubyClassName");
+````
+
+Yep, that is it.  You now have an instance of IMyInterface that is actually a Ruby class.  Seriously.
