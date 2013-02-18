@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 
 namespace ConfigInCode
@@ -23,14 +24,16 @@ namespace ConfigInCode
 
         public Configuration()
         {
-            var rubyFile = @"Configuration\" + typeof (T).Name + ".rb";
-            FileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, rubyFile);
-            if (!File.Exists(FileName))
-            {
-                FileName = null;
-                if(!string.IsNullOrEmpty(AppDomain.CurrentDomain.RelativeSearchPath))
-                    FileName = Path.Combine(AppDomain.CurrentDomain.RelativeSearchPath, rubyFile);
-            }
+            var rubyFile = typeof (T).Name + ".rb";
+            var foldersToCheck = new[]
+                {
+                    Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Configuration"),
+                    AppDomain.CurrentDomain.BaseDirectory,
+                    Path.Combine(AppDomain.CurrentDomain.RelativeSearchPath, "Configuration"),
+                    AppDomain.CurrentDomain.RelativeSearchPath,
+                };
+            FileName = foldersToCheck.Select(x => Path.Combine(x, rubyFile))
+                .First(x => File.Exists(x));
             RubyScript = new RubyScript();
             RubyScript.LoadAssembly(Assembly.GetAssembly(typeof(T)));
         }

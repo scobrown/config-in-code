@@ -56,10 +56,14 @@
   <ItemGroup>
     <Compile Include="ConfigurationTests_Load.cs" />
     <EmbeddedResource Include="Embedded.rb" />
+    <Compile Include="IRespond.cs" />
     <Compile Include="ITestConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Configuration\IRespond.rb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Configuration\ITestConfiguration.rb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

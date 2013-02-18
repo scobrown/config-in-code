@@ -33,5 +33,12 @@ namespace Test.ConfigInCode
                                                 "Test.ConfigInCode.Embedded.rb"), "UnusedParam");
             Assert.NotNull(c);
         }
+        [Test]
+        public void can_respond_to_method_call()
+        {
+            var config = new Configuration<IRespond>();
+            var c = config.GetConfiguration("RubyResponder");
+            Assert.That(c.Request(), Is.EqualTo("Hello World"));
+        }
     }
 }
