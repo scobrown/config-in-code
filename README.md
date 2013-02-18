@@ -1,3 +1,9 @@
+NuGet Me
+========
+Install-Package ConfigInCode
+
+https://nuget.org/packages/ConfigInCode/1.0
+
 Config In Code
 ==============
 
