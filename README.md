@@ -90,5 +90,5 @@ Caveats
 =======
 * ~5MB dll!!  Both python and ruby are included by default and get embedded
 * The script gets loaded and executed every time GetConfiguration is called.  This is intended to be "bootstrapp-ish" code and not something for a tight loop
-* May not hold up well under high load
+* May not hold up well under high load, this was meant to be called at bootstrap or maybe a few times per hour.  
 * Subject to all the limitations of the DLR implementations
