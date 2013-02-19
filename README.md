@@ -1,8 +1,9 @@
 NuGet Me
 ========
 Install-Package ConfigInCode
+Install-Package ConfigInCode.StructureMap
 
-https://nuget.org/packages/ConfigInCode/1.0
+https://nuget.org/packages/ConfigInCode/1.1
 
 Config In Code
 ==============
