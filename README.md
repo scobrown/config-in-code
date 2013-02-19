@@ -20,7 +20,7 @@ What does it look like
 ======================
 ````
 var config = new Configuration<IMyInterface>();
-var c = config.GetConfiguration();
+var c = config.GetDefaultConfiguration();
 ````
 
 Yep, that is it.  You now have an instance of IMyInterface that is actually a Ruby class.  Seriously.
